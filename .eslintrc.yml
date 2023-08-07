@@ -1,0 +1,36 @@
+root: true
+env:
+  browser: true
+  es2021: true
+  node: true
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/typescript
+  - plugin:@typescript-eslint/recommended
+  - prettier
+overrides:
+  - files:
+    - "*.tsx"
+    - "*.ts"
+    - "*.js"
+    - "*.jsx"
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - react
+  - react-hooks
+  - "@typescript-eslint"
+  - prettier
+settings:
+  "import/resolver":
+    typescript: {}
+rules:
+  "react/jsx-uses-react": "off"
+  "react/react-in-jsx-scope": "off"
+  '@typescript-eslint/no-non-null-assertion': 'off'
